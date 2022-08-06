@@ -1,4 +1,4 @@
-import "./css/main.css";
+// import "./css/main.css";
 import Form from "./components/Form/form";
 
 function App() {

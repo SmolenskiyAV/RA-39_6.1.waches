@@ -2,6 +2,8 @@
 
 import "./watchCollection.css";
 import displayCanvas from "./clockscript";
+import dayjs from 'dayjs';
+
 // import PropTypes from "prop-types";
 // import UserModel from "../models/UserModel";
 
@@ -28,8 +30,8 @@ export default function WatchCollection(props) {	// КОМПОНЕНТ всей 
 						window.clearInterval(intervalTemporalValue[id]); // останавливаем автообновление
 						return;
 					}
-					let d = new Date();
-					document.getElementById(id).querySelector('div').innerHTML =  d.toUTCString();
+					//let d = new Date();
+					document.getElementById(id).querySelector('div').innerHTML =  dayjs().format( 'DD-MM-YYYY' )/*d.toUTCString()*/;
 					displayCanvas(utc, id);
 				}, 1000);
 
@@ -48,4 +50,4 @@ return (
             {itemsObj.map((itemOfList) => ListItem(itemOfList))}
     </div>
 )
-}
+};
